@@ -2,3 +2,5 @@ streamlit
 st-gsheets-connection
 bs4
 google-genai
+markdown
+weasyprint
