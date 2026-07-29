@@ -10,7 +10,9 @@ import streamlit.components.v1 as components
 # ==============================================================================
 # CONFIGURATION & CONSTANTS
 # ==============================================================================
-API_KEY = "AQ.Ab8RN6JUOewawdBsSEA4wJTF84r1fxDovyPhh-mTwFh2TSolCA"
+# Retrieve API key securely from Streamlit secrets (or fallback to empty string)
+API_KEY = st.secrets.get("GEMINI_API_KEY", "")
+
 URL_RESUME = "https://docs.google.com/document/d/1CR3_ALCHvWhfgCTQdbqqYUD-k32LJH6M-8MBY3479O0/edit?usp=sharing"
 
 # Set page configuration
@@ -74,7 +76,14 @@ st.markdown("Automated single-page resume tailoring and cover letter generation 
 # Sidebar for inputs and configurations
 with st.sidebar:
     st.header("Configuration")
-    api_key_input = st.text_input("Gemini API Key", value=API_KEY, type="password")
+    
+    # Use API key from secrets if present, or let user override/input manually
+    api_key_input = st.text_input(
+        "Gemini API Key", 
+        value=API_KEY, 
+        type="password",
+        help="If configured in Streamlit Secrets, this will auto-fill hidden."
+    )
     resume_url_input = st.text_input("Google Doc Resume URL", value=URL_RESUME)
     st.divider()
     st.info("Ensure the Google Doc is set to 'Anyone with the link can view'.")
@@ -90,6 +99,10 @@ with st.form("job_form"):
     submit_button = st.form_submit_button("Generate Application Documents", type="primary")
 
 if submit_button:
+    if not api_key_input.strip():
+        st.error("Missing Gemini API Key. Please add it to your Streamlit secrets or enter it in the sidebar.")
+        st.stop()
+
     if not url_job_desc.strip():
         st.error("Please enter a valid Job Description URL.")
         st.stop()
