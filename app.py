@@ -11,7 +11,8 @@ import streamlit.components.v1 as components
 # CONFIGURATION & CONSTANTS
 # ==============================================================================
 # Retrieve API key securely from Streamlit secrets (or fallback to empty string)
-API_KEY = st.secrets.get("GEMINI_API_KEY", "")
+# API_KEY = st.secrets.get("GEMINI_API_KEY", "")
+API_KEY = "AQ.Ab8RN6JUOewawdBsSEA4wJTF84r1fxDovyPhh-mTwFh2TSolCA"
 
 URL_RESUME = "https://docs.google.com/document/d/1CR3_ALCHvWhfgCTQdbqqYUD-k32LJH6M-8MBY3479O0/edit?usp=sharing"
 
