@@ -126,7 +126,7 @@ if st.button("Generate Documents", type="primary"):
             ### 1. Resume Structural Layout & Tiering Logic
             * **Highly Concise Summary:** You are an expert career coach and professional resume writer. Your task is to write a highly tailored, punchy, and ultra-concise professional summary based on the candidate's profile and a target role..
             * **No Standalone Skills Section:** To save critical vertical spacing, do not include a separate grid of keywords. Weave critical technical tools, languages, and methodologies directly into the experience bullets where we're applied.
-            * **Tier 1 Experience:** Prioritize the candidate's experience at Optimera, Penske Media Corp, and MPW Enterprises. Use 3-5 comprehensive bullet points per role, focusing heavily on metrics, cross-functional engineering leadership, scaling achievements, or customer success value.
+            * **Tier 1 Experience:** Prioritize the candidate's experience at Optimera, Penske Media Corp, and MPW Enterprises. Use 3-6 comprehensive bullet points per role, focusing heavily on metrics, cross-functional engineering leadership, scaling achievements, or customer success value.
             * **Tier 2 Experience:** Shorten all other older positions (Undertone, Frankly Media, American Media Inc, XO Group) down to exactly 1 high-impact bullet point focusing strictly on a key achievement or architecture build.
             * Do include education NYU Polytechnic, 2007, Masters of Science, Computer Science
             * Do include education City College of New York, 2004, Bachelors of Science, Computer Science
