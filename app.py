@@ -65,7 +65,7 @@ def fetch_generic_url_text(url):
 # STREAMLIT UI
 # ==============================================================================
 st.title("📄 AI Resume & Cover Letter Generator")
-st.write("Tailor your resume and cover letter using Gemini 2.5 Flash Lite based on a target job description.")
+st.write("Tailor your resume and cover letter using Gemini 3.5 Flash Lite based on a target job description.")
 
 col1, col2 = st.columns(2)
 
@@ -109,7 +109,7 @@ if st.button("Generate Documents", type="primary"):
             """
 
             extract_response = client.models.generate_content(
-                model='gemini-2.5-flash-lite',
+                model='gemini-3.5-flash-lite',
                 contents=extraction_prompt,
                 config=types.GenerateContentConfig(temperature=0.0)
             )
@@ -182,7 +182,7 @@ if st.button("Generate Documents", type="primary"):
             # 5. Generate Outputs
             status.update(label="Generating tailored single-page HTML resume...")
             resume_response = client.models.generate_content(
-                model='gemini-2.5-flash-lite',
+                model='gemini-3.5-flash-lite',
                 contents=user_content,
                 config=types.GenerateContentConfig(
                     system_instruction=resume_system_instruction,
@@ -192,7 +192,7 @@ if st.button("Generate Documents", type="primary"):
 
             status.update(label="Generating Cover Letter...")
             cl_response = client.models.generate_content(
-                model='gemini-2.5-flash-lite',
+                model='gemini-3.5-flash-lite',
                 contents=user_content,
                 config=types.GenerateContentConfig(
                     system_instruction=cl_system_instruction,
