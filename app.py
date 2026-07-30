@@ -72,7 +72,7 @@ col1, col2 = st.columns(2)
 with col1:
     job_url = st.text_input(
         "Job Description URL",
-        placeholder="https://example.com/careers/job-posting-id"
+        placeholder="https://freestar.com/careers/?gh_jid=8614935002"
     )
 
 with col2:
